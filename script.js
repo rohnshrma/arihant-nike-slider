@@ -1,173 +1,69 @@
-// Listen for Click -----------------------------------------------------------
+// 🌟 Select Elements
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("slider-prev")) {
-    togglePrevious();
-    togglePreviousDesc();
-    updatePrev();
-  } else if (e.target.classList.contains("slider-next")) {
-    toggleNext();
-    toggleNextDesc();
-    updateNext();
-  }
+let index = 0;
+let totalSlides = slides.length;
+let visibleSlides = window.innerWidth <= 768 ? 1 : 3;
+let slideWidth = slides[0].clientWidth;
+
+// 🔄 Function to Update Slide Position & Middle Effect
+function updateSlider() {
+  slider.style.transform = `translateX(-${index * slideWidth}px)`;
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove("middle");
+    if (i === index + Math.floor(visibleSlides / 2)) {
+      slide.classList.add("middle"); // 🎯 Highlight middle slide
+    }
+  });
+}
+
+// 🔄 Auto-Play
+let autoPlay = setInterval(() => {
+  index = (index + 1) % (totalSlides - visibleSlides + 1);
+  updateSlider();
+}, 3000);
+
+// 🎯 Click Events for Buttons
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener("click", () => {
+    index = Math.max(0, index - 1);
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    index = Math.min(totalSlides - visibleSlides, index + 1);
+    updateSlider();
+  });
+}
+
+// 🎯 Swipe Gesture for Mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
 });
 
-// Rotate the Course Title -----------------------------------------------------------
-
-function togglePrevious() {
-  const currentActive = document.querySelector("h3.active");
-  const currentIndex = parseInt(currentActive.dataset.index);
-  //console.log(currentIndex);
-
-  if (currentIndex - 1 >= 0) {
-    const previousChild = document.querySelector(
-      `[data-index="${currentIndex - 1}"]`
-    );
-    //console.log(previousChild)
-    currentActive.classList.remove("active");
-    previousChild.classList.add("active");
-  } else {
-    const previousChild = document.querySelector(`[data-index="${4}"]`);
-    //console.log(previousChild)
-    currentActive.classList.remove("active");
-    previousChild.classList.add("active");
+slider.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  if (touchStartX - touchEndX > 50) {
+    index = Math.min(totalSlides - 1, index + 1);
+  } else if (touchEndX - touchStartX > 50) {
+    index = Math.max(0, index - 1);
   }
-}
+  updateSlider();
+});
 
-function toggleNext() {
-  const currentActive = document.querySelector("h3.active");
-  const currentIndex = parseInt(currentActive.dataset.index);
-  //console.log(currentIndex);
+// 🔄 Update Slide Width on Resize
+window.addEventListener("resize", () => {
+  visibleSlides = window.innerWidth <= 768 ? 1 : 3;
+  slideWidth = slides[0].clientWidth;
+  updateSlider();
+});
 
-  if (currentIndex + 1 <= 4) {
-    const nextChild = document.querySelector(
-      `[data-index="${currentIndex + 1}"]`
-    );
-    //console.log(nextChild)
-    currentActive.classList.remove("active");
-    nextChild.classList.add("active");
-  } else {
-    const nextChild = document.querySelector(`[data-index="${0}"]`);
-    //console.log(nextChild)
-    currentActive.classList.remove("active");
-    nextChild.classList.add("active");
-  }
-}
-
-// Rotate the Course Description -----------------------------------------------------------
-
-function togglePreviousDesc() {
-  const currentActive = document.querySelector("h2.active");
-  const currentIndex = parseInt(currentActive.dataset.index);
-  //console.log(currentIndex);
-
-  if (currentIndex - 1 >= 10) {
-    const previousChild = document.querySelector(
-      `[data-index="${currentIndex - 1}"]`
-    );
-    //console.log(previousChild)
-    currentActive.classList.remove("active");
-    previousChild.classList.add("active");
-  } else {
-    const previousChild = document.querySelector(`[data-index="${14}"]`);
-    //console.log(previousChild)
-    currentActive.classList.remove("active");
-    previousChild.classList.add("active");
-  }
-}
-
-function toggleNextDesc() {
-  const currentActive = document.querySelector("h2.active");
-  const currentIndex = parseInt(currentActive.dataset.index);
-  //console.log(currentIndex);
-
-  if (currentIndex + 1 <= 14) {
-    const nextChild = document.querySelector(
-      `[data-index="${currentIndex + 1}"]`
-    );
-    //console.log(nextChild)
-    currentActive.classList.remove("active");
-    nextChild.classList.add("active");
-  } else {
-    const nextChild = document.querySelector(`[data-index="${10}"]`);
-    //console.log(nextChild)
-    currentActive.classList.remove("active");
-    nextChild.classList.add("active");
-  }
-}
-
-// Rotate the Course Images -----------------------------------------------------------
-
-function updateNext() {
-  // Set the position of each item based on the current index
-  const items = document.querySelectorAll(".item");
-  items.forEach((item) => {
-    let position = parseInt(item.style.order);
-    console.log(position);
-    if (position + 1 <= 4) {
-      position++;
-      item.style.order = position;
-      console.log(position);
-    } else {
-      item.style.order = 0;
-      console.log(position);
-    }
-  });
-  // Apply styles based on the position of each item
-  items.forEach((item) => {
-    let position2 = parseInt(item.style.order);
-    if (position2 == 0) {
-      item.classList.add("small1");
-      item.classList.remove("small2");
-    } else if (position2 == 1) {
-      item.classList.add("big1");
-      item.classList.remove("small1");
-    } else if (position2 == 2) {
-      item.classList.add("focus");
-      item.classList.remove("big1");
-    } else if (position2 == 3) {
-      item.classList.add("big2");
-      item.classList.remove("focus");
-    } else if (position2 == 4) {
-      item.classList.add("small2");
-      item.classList.remove("big2");
-    }
-  });
-}
-
-function updatePrev() {
-  // Set the position of each item based on the current index
-  const items = document.querySelectorAll(".item");
-  items.forEach((item) => {
-    let position = parseInt(item.style.order);
-    console.log(position);
-    if (position - 1 >= 0) {
-      position--;
-      item.style.order = position;
-      console.log(position);
-    } else {
-      item.style.order = 4;
-      console.log(position);
-    }
-  });
-  // Apply styles based on the position of each item
-  items.forEach((item) => {
-    let position2 = parseInt(item.style.order);
-    if (position2 == 0) {
-      item.classList.add("small1");
-      item.classList.remove("big1");
-    } else if (position2 == 1) {
-      item.classList.add("big1");
-      item.classList.remove("focus");
-    } else if (position2 == 2) {
-      item.classList.add("focus");
-      item.classList.remove("big2");
-    } else if (position2 == 3) {
-      item.classList.add("big2");
-      item.classList.remove("small2");
-    } else if (position2 == 4) {
-      item.classList.add("small2");
-      item.classList.remove("small1");
-    }
-  });
-}
+// 🎯 Initial Middle Slide Highlight
+updateSlider();
