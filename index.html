@@ -2,70 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider - 3 Cards at a Time</title>
+    <!-- Specifies the document type and version of HTML -->
+    <meta charset="UTF-8"> <!-- Defines character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the site responsive on mobile -->
+    <title>Image Slider - 3 Cards at a Time</title> <!-- Title of the web page -->
+
+    <!-- Linking external CSS file for styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Slider container that holds the entire slider -->
     <div class="slider-container">
+        <!-- Previous slide button -->
         <button class="prev" onclick="prevSlide()">❮</button>
+
+        <!-- Main slider section that contains all slides -->
         <div class="slider">
+            <!-- Individual slides with images and text -->
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image1.jpg" alt="Image 1">
                 </div>
                 <p>Card 1</p>
             </div>
-            <div class="slide middle">
+
+            <div class="slide middle"> <!-- This slide is initially scaled bigger -->
                 <div class="img-bx">
                     <img src="./images/image2.jpg" alt="Image 2">
                 </div>
                 <p>Card 2</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image3.jpg" alt="Image 3">
                 </div>
                 <p>Card 3</p>
             </div>
+
+            <!-- More slides -->
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image4.jpeg" alt="Image 4">
                 </div>
                 <p>Card 4</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image5.jpeg" alt="Image 5">
                 </div>
                 <p>Card 5</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image6.jpeg" alt="Image 6">
                 </div>
                 <p>Card 6</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image7.jpeg" alt="Image 7">
                 </div>
                 <p>Card 7</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image8.jpeg" alt="Image 8">
                 </div>
                 <p>Card 8</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image9.jpeg" alt="Image 9">
                 </div>
                 <p>Card 9</p>
             </div>
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image10.jpeg" alt="Image 10">
@@ -73,8 +91,12 @@
                 <p>Card 10</p>
             </div>
         </div>
+
+        <!-- Next slide button -->
         <button class="next" onclick="nextSlide()">❯</button>
     </div>
+
+    <!-- Linking external JavaScript file for functionality -->
     <script src="script.js"></script>
 </body>
 
