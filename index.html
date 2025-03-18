@@ -2,24 +2,22 @@
 <html lang="en">
 
 <head>
-    <!-- Specifies the document type and version of HTML -->
-    <meta charset="UTF-8"> <!-- Defines character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the site responsive on mobile -->
-    <title>Image Slider - 3 Cards at a Time</title> <!-- Title of the web page -->
 
-    <!-- Linking external CSS file for styling -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider - 3 Cards at a Time</title>
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Slider container that holds the entire slider -->
+
     <div class="slider-container">
-        <!-- Previous slide button -->
+
         <button class="prev" onclick="prevSlide()">❮</button>
 
-        <!-- Main slider section that contains all slides -->
         <div class="slider">
-            <!-- Individual slides with images and text -->
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image1.jpg" alt="Image 1">
@@ -27,7 +25,7 @@
                 <p>Card 1</p>
             </div>
 
-            <div class="slide middle"> <!-- This slide is initially scaled bigger -->
+            <div class="slide middle">
                 <div class="img-bx">
                     <img src="./images/image2.jpg" alt="Image 2">
                 </div>
@@ -41,7 +39,7 @@
                 <p>Card 3</p>
             </div>
 
-            <!-- More slides -->
+
             <div class="slide">
                 <div class="img-bx">
                     <img src="./images/image4.jpeg" alt="Image 4">
@@ -92,11 +90,11 @@
             </div>
         </div>
 
-        <!-- Next slide button -->
+
         <button class="next" onclick="nextSlide()">❯</button>
     </div>
 
-    <!-- Linking external JavaScript file for functionality -->
+
     <script src="script.js"></script>
 </body>
 
