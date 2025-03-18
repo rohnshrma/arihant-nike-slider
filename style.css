@@ -95,14 +95,3 @@ button {
 button:hover {
   background: rgba(0, 0, 0, 0.8);
 }
-
-/* 🌟 Mobile - Show Only 1 Slide, Remove Buttons */
-@media (max-width: 768px) {
-  .slide {
-    min-width: 100%;
-  }
-
-  button {
-    display: none;
-  }
-}
