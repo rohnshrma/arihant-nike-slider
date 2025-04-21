@@ -4,99 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider - 3 Cards at a Time</title>
+    <title>Nike Card Flow</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Nike Logo centered above slider -->
-    <div style="margin-bottom: 40px;" class="logo-bx">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo"
+
+    <div class="loader">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786.5 277.5">
+            <path
+                d="M776.8 42.4c-289.3 174.8-445 236.3-613.2 236.3-67.2 0-131.6-11.4-152.8-45.7-22.9-37.1-9.1-96 42.9-151.7C123 5.9 236.4-14.7 342.3 25.5c54.3 20.7 110.9 56.5 219.8 131.6C669.7 231.3 777.4 277 776.8 42.4z" />
+        </svg> -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo Loader"
             style="max-width: 200px; height: auto;">
     </div>
 
+
+    <div class="heading-container">
+        <h1 class="main-heading text-reveal">Nike Collection</h1>
+        <p class="sub-heading">Discover Our Latest Release</p>
+    </div>
+
+
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo"
+        style="max-width: 200px; height: auto;" class="nike-logo"> -->
+
     <div class="slider-container">
-        <button class="prev">❮</button>
+        <button class="nav-button prev">❮</button>
 
         <div class="slider">
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image1.jpg" alt="Image 1">
-                    <p>Air Jordans, Unleash your power</p>
+
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image1.jpg" alt="nike 1">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image1.jpg" alt="nike 1">
+                    <h3>Nike Air Max <br> Experience Comfort and Style</h3>
                 </div>
             </div>
-
-            <div class="slide middle">
-                <div class="img-bx">
-                    <img src="./images/image2.jpg" alt="Image 2">
-                    <p>Run Longer, Endure It!</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image2.jpg" alt="nike 2">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image2.jpg" alt="nike 2">
+                    <h3>Nike Zoom<br>Speed Meets Innovation</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image3.jpg" alt="Image 3">
-                    <p>Xpress Your Inner Athlete</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image3.jpg" alt="nike 3">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image3.jpg" alt="nike 3">
+                    <h3>Nike Free<br>Neutral Movement Redefined</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image4.jpeg" alt="Image 4">
-                    <p>Alt Stree Style</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image4.jpeg" alt="nike 4">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image4.jpeg" alt="nike 4">
+                    <h3>Nike React<br>Responsive Cushioning</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image5.jpeg" alt="Image 5">
-                    <p>Run Harder and Faster</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image5.jpeg" alt="nike 5">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image5.jpeg" alt="nike 5">
+                    <h3>Nike React<br>Responsive Cushioning</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image6.jpeg" alt="Image 6">
-                    <p>Nike Air Force</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image6.jpeg" alt="nike 6">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image6.jpeg" alt="nike 6">
+                    <h3>Nike Power<br>Unlease It</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image7.jpeg" alt="Image 7">
-                    <p>Cutting Edge Tech!</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image7.jpeg" alt="nike 7">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image7.jpeg" alt="nike 7">
+                    <h3>Nike Power<br>Power In Each Step</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image8.jpeg" alt="Image 8">
-                    <p>Gold Standard For Comfort</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image8.jpeg" alt="nike 8">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image8.jpeg" alt="nike 8">
+                    <h3>Nike Comfort<br>Feel Like Air</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image9.jpeg" alt="Image 9">
-                    <p>Nike Street Style</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image9.jpeg" alt="nike 9">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image9.jpeg" alt="nike 9">
+                    <h3>Air Jordans<br>Make a Jump</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="img-bx">
-                    <img src="./images/image10.jpeg" alt="Image 10">
-                    <p>Express Yourself, Just Do It!</p>
+            <div class="card">
+                <div class="card-front">
+                    <img src="./images/image10.jpeg" alt="nike 10">
+                </div>
+                <div class="card-back">
+                    <img src="./images/image10.jpeg" alt="nike 10">
+                    <h3>Nike Power<br>Maxxxx Power</h3>
                 </div>
             </div>
         </div>
 
-        <button class="next">❯</button>
+
+
+        <button class="nav-button next">❯</button>
     </div>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
