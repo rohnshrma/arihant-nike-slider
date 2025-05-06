@@ -191,8 +191,8 @@ body {
   position: relative;
 }
 
-.text-reveal::before {
-  content: "";
+.reveal-layer {
+  /* content: ""; */
   position: absolute;
   top: 0;
   left: 0;

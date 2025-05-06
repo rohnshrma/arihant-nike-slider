@@ -26,12 +26,12 @@ tl.from(".loader img", {
     duration: 1,
     ease: "power3.out",
   })
-  .to(".text-reveal::before", {
+  .to(".reveal-layer", {
     scaleX: 1,
     duration: 0.8,
     ease: "power2.inOut",
   })
-  .to(".text-reveal::before", {
+  .to(".reveal-layer", {
     scaleX: 0,
     transformOrigin: "right",
     duration: 0.8,
