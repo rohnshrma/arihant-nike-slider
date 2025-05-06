@@ -43,12 +43,6 @@ tl.from(".loader img", {
     duration: 0.8,
     ease: "power3.out",
   })
-  .from(".nike-logo", {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    ease: "power3.out",
-  })
   .to(".slider-container", {
     opacity: 1,
     duration: 1,
@@ -59,6 +53,43 @@ tl.from(".loader img", {
     stagger: 0.1,
     duration: 0.8,
     ease: "power3.out",
+  })
+  .from("#info h2", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "elastic.out(1, 0.5)",
+    onStart: () => {
+      gsap.to("#info h2", {
+        textShadow: "0 0 20px rgba(51, 195, 240, 0.8)",
+        duration: 1,
+        repeat: 1,
+        yoyo: true,
+      });
+    },
+  })
+  .from("#info p", {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out",
+    skewX: 20,
+    transformOrigin: "left",
+  })
+  .from("#info button", {
+    scale: 0,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.6,
+    ease: "back.out(1.7)",
+    onStart: () => {
+      gsap.to("#info button", {
+        boxShadow: "0 0 15px rgba(51, 195, 240, 0.5)",
+        duration: 0.8,
+        repeat: 1,
+        yoyo: true,
+      });
+    },
   });
 
 const cards = document.querySelectorAll(".card");

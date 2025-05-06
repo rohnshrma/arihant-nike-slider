@@ -32,6 +32,7 @@ body {
 
 .slider-container {
   width: 100%;
+  min-height: 80vh;
   max-width: 1200px;
   padding: 20px;
   margin: 40px auto;
@@ -143,7 +144,7 @@ body {
 
 .heading-container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   opacity: 0;
   position: relative;
 }
@@ -202,4 +203,27 @@ body {
   transform: scaleX(0);
   transform-origin: left;
   z-index: 1;
+}
+
+#info {
+  padding: 3rem;
+  text-align: center;
+}
+
+#info h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+#info p {
+  line-height: 1.5;
+}
+
+#info button {
+  margin: 1rem 0.5rem 0;
+  color: #fff;
+  padding: 12px 14px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+  border-color: transparent;
 }
