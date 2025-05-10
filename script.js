@@ -90,7 +90,102 @@ tl.from(".loader img", {
         yoyo: true,
       });
     },
-  });
+  })
+  // Add bouncing arrow animation
+  .to("#jumping_arrow", {
+    y: -20, // Move up 20px
+    duration: 0.5,
+    ease: "power1.inOut",
+    repeat: -1, // Repeat indefinitely
+    yoyo: true, // Reverse animation for bounce effect
+  })
+  // Add slide and fade effects for #own .content children
+  .from("#own .content h2", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "elastic.out(1, 0.5)",
+  })
+  .from(
+    "#own .content p",
+    {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+      skewX: 20,
+      transformOrigin: "left",
+    },
+    "-=0.5"
+  ) // Overlap with h2 for smoother flow
+  .from(
+    "#own .content button",
+    {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.out(1.7)",
+    },
+    "-=0.3"
+  ) // Overlap with p for smoother flow
+  // Add slide and fade effects for #story .content children
+  .from("#story .content h2", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "elastic.out(1, 0.5)",
+  })
+  .from(
+    "#story .content p",
+    {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+      skewX: 20,
+      transformOrigin: "left",
+    },
+    "-=0.5"
+  )
+  .from(
+    "#story .content button",
+    {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.out(1.7)",
+    },
+    "-=0.3"
+  )
+  // Add slide and fade effects for #play .content children
+  .from("#play .content h2", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "elastic.out(1, 0.5)",
+  })
+  .from(
+    "#play .content p",
+    {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+      skewX: 20,
+      transformOrigin: "left",
+    },
+    "-=0.5"
+  )
+  .from(
+    "#play .content button",
+    {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.out(1.7)",
+    },
+    "-=0.3"
+  );
 
 const cards = document.querySelectorAll(".card");
 cards.forEach((card) => {

@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike Card Flow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo Loader"
             style="max-width: 200px; height: auto;">
-    </div>
+    </div> -->
 
     <div class="heading-container">
         <h1 class="main-heading text-reveal"><span class="reveal-layer"></span>Nike Collection</h1>
@@ -116,20 +117,65 @@
         </div>
 
         <button class="nav-button next" aria-label="Next slide">❯</button>
+
+        <a href="#info" id="jumping_arrow"><i class="fa-solid fa-arrow-down"></i></a>
     </div>
 
 
     <div id="info">
-        <h2>GO NUTS</h2>
-        <p>Get moving, get free, and discover the joy of the "JUST DO IT" mindset <br>
-            Nike is here for you while you..........JUST DO IT! We have what you need regardless of your preferences
-            <br>
-            Is your body temperature high? is your hair standing up behind your neck? Then your finding your rhythm
-        </p>
+        <div class="content">
+            <h2>GO NUTS</h2>
+            <p>Get moving, get free, and discover the joy of the "JUST DO IT" mindset <br>
+                Nike is here for you while you..........JUST DO IT! <br>
+                We have what you need regardless of your preferences
+                <br>
+                Is your body temperature high? is your hair standing up behind your neck? Then your finding your rhythm
+            </p>
 
-        <button>Learn More</button>
-        <button>Just Buy It</button>
+            <button>Learn More</button>
+            <button>Just Buy It</button>
+        </div>
+
+        <a href="#own" id="jumping_arrow"><i class="fa-solid fa-arrow-down"></i></a>
+
     </div>
+
+
+    <div id="own">
+        <div class="content">
+            <p>
+                Just you, your thoughts, and your commitment.
+            </p>
+            <h2>OWN THE MOMENT</h2>
+            <button>Show Collection</button>
+        </div>
+
+        <a href="#story" id="jumping_arrow"><i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+
+    <div id="story">
+        <div class="content">
+            <h2>OUR STORY</h2>
+            <p>
+                Soccer, Athletics , The Rules Change But The Story Is Same
+            </p>
+            <button>Read More</button>
+        </div>
+
+        <a href="#play" id="jumping_arrow"><i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+    <div id="play">
+        <div class="content">
+            <h2>PLAY TOGETHER, RISE TOGETHER</h2>
+            <p>
+                Solidarity that's forged in Pain. Moment by moment, pushing past everything. Unite.Rise.Just Do It
+            </p>
+            <button>Start Playing</button>
+        </div>
+
+        <!-- <a href="#own" id="jumping_arrow"><i class="fa-solid fa-arrow-down"></i></a> -->
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/Draggable.min.js"></script>
