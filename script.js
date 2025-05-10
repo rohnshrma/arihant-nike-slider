@@ -98,8 +98,23 @@ tl.from(".loader img", {
     ease: "power1.inOut",
     repeat: -1, // Repeat indefinitely
     yoyo: true, // Reverse animation for bounce effect
+  });
+
+// Scroll-triggered animations for #own .content children
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#own",
+      start: "top 70%", // Trigger when top of #own is 70% from top of viewport (30% visible)
+      toggleActions: "play none none none",
+    },
   })
-  // Add slide and fade effects for #own .content children
+  .set("#own .content button", {
+    display: "inline-block", // Ensure button is renderable
+    opacity: 0, // Start invisible for animation
+    scale: 0, // Start scaled down for animation
+    clearProps: "display,opacity,transform", // Clear conflicting properties
+  })
   .from("#own .content h2", {
     x: -100,
     opacity: 0,
@@ -117,18 +132,34 @@ tl.from(".loader img", {
       transformOrigin: "left",
     },
     "-=0.5"
-  ) // Overlap with h2 for smoother flow
+  )
   .from(
     "#own .content button",
     {
-      scale: 0,
-      opacity: 0,
+      scale: 1,
+      opacity: 1,
       duration: 0.6,
       ease: "back.out(1.7)",
+      clearProps: "all", // Ensure no conflicting properties remain
     },
     "-=0.3"
-  ) // Overlap with p for smoother flow
-  // Add slide and fade effects for #story .content children
+  );
+
+// Scroll-triggered animations for #story .content children
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#story",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+  })
+  .set("#story .content button", {
+    display: "inline-block",
+    opacity: 0,
+    scale: 0,
+    clearProps: "display,opacity,transform",
+  })
   .from("#story .content h2", {
     x: -100,
     opacity: 0,
@@ -150,14 +181,30 @@ tl.from(".loader img", {
   .from(
     "#story .content button",
     {
-      scale: 0,
-      opacity: 0,
+      scale: 1,
+      opacity: 1,
       duration: 0.6,
       ease: "back.out(1.7)",
+      clearProps: "all",
     },
     "-=0.3"
-  )
-  // Add slide and fade effects for #play .content children
+  );
+
+// Scroll-triggered animations for #play .content children
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#play",
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+  })
+  .set("#play .content button", {
+    display: "inline-block",
+    opacity: 0,
+    scale: 0,
+    clearProps: "display,opacity,transform",
+  })
   .from("#play .content h2", {
     x: -100,
     opacity: 0,
@@ -179,10 +226,11 @@ tl.from(".loader img", {
   .from(
     "#play .content button",
     {
-      scale: 0,
-      opacity: 0,
+      scale: 1,
+      opacity: 1,
       duration: 0.6,
       ease: "back.out(1.7)",
+      clearProps: "all",
     },
     "-=0.3"
   );
